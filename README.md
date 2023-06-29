@@ -4,7 +4,7 @@ Utilize stb_image and directx 9 & 11 to effortlessly load the image of your choi
 file    | support | description
 --------------------- | --- | --------------------------------
 **[ImageLoaderDX9.h](imageloaderdx9.h)** | file | load any image you want through file using stb_image
-**[ImageLoaderDX11.h](imageloaderdx11.h)** | file, memory | load any image yu want through both file and memory using stb_image
+**[ImageLoaderDX11.h](imageloaderdx11.h)** | file, memory | load any image you want through both file and memory using stb_image
 
 ## Usage
 
