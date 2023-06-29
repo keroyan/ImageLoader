@@ -1,4 +1,7 @@
 #pragma once
+
+// #define STB_IMAGE_IMPLEMENTATION <---- define this if you haven't already!
+
 #include <cstdint>
 #include <d3d11.h>
 #include "stb_image.h"
