@@ -6,8 +6,6 @@
 #include <d3d9.h>
 #include <d3dx9tex.h>
 #include "stb_image.h"
-#include "imgui.h"
-
 
 class Texture
 {
