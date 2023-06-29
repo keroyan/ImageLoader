@@ -8,11 +8,37 @@ file    | can add from memory? | description
 
 ## Usage
 
+### DX9
+
 ```cpp
 static Texture t;
 static bool result = t.Init("C:\\test.png", pDevice);
 if (result)
 {
      ImGui::Image(t.GetTexture(), ImVec2(512, 384));
+}
+```
+
+### DX11
+
+From Memory
+```cpp
+static Texture logo(pDevice);
+static bool logo_result = logo.LoadTextureFromMemory(logo_bytes, logo_bytes_size);
+if (logo_result)
+{
+     ImGui::Image(logo.GetTexture(), ImVec2(64, 64));
+     // Note: You can get the actual size of the image using logo.GetWidth() and Logo.GetHeight()
+}
+```
+
+From File
+```cpp
+static Texture logo(pDevice);
+static bool logo_result = logo.LoadTextureFromFile("test.png");
+if (logo_result)
+{
+     ImGui::Image(logo.GetTexture(), ImVec2(64, 64));
+     // Note: You can get the actual size of the image using logo.GetWidth() and Logo.GetHeight()
 }
 ```
