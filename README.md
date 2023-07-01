@@ -11,8 +11,8 @@ file    | support | description
 ### DX9
 
 ```cpp
-static Texture t;
-static bool result = t.Init("C:\\test.png", pDevice);
+static Texture t(pDevice);
+static bool result = t.LoadTextureFromFile("C:\\test.png");
 if (result)
 {
      ImGui::Image(t.GetTexture(), ImVec2(512, 384));
