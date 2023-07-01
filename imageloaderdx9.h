@@ -10,7 +10,12 @@
 class Texture
 {
 public:
-    bool Init(const char* filename, IDirect3DDevice9* pDevice) 
+    Texture(IDirect3DDevice9* pDevice) 
+    {
+        this->pDevice = pDevice;
+    }
+
+    bool LoadTextureFromFile(const char* filename) 
     {
         std::int32_t
             image_width = 0,
@@ -67,6 +72,18 @@ public:
         return true;
     }
 
+      // Gets you the original width of the image!
+    std::int32_t GetWidth() 
+    {
+        return image_width;
+    }
+    
+      // Gets you the original height of the image!
+    std::int32_t GetHeight() 
+    {
+        return image_height;
+    }
+
     void Destroy()
     {
         reinterpret_cast<IDirect3DTexture9*>(texture)->Release();
@@ -80,4 +97,7 @@ public:
 
 private:
     void* texture;
+    std::int32_t image_width = 0;
+    std::int32_t image_height = 0;
+    IDirect3DDevice9* pDevice;
 };
